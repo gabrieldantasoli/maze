@@ -3,6 +3,13 @@
     var ctx = cnv.getContext('2d');
     
     var tilesize = 64;
+    var tilescrsize = 96;
+
+    var img = new Image();
+        img.src = 'img.png';
+        img.addEventListener('load',function() {
+            loop()
+        },false);
 
     var walls = [];
 
@@ -170,10 +177,12 @@
         for (var row in maze) {
             for (var column in maze[row]) {
                 var tile = maze[row][column];
+                var x = column * tilesize;
+                var y = row *tilesize;
                 if (tile === 1) {
-                    var x = column * tilesize;
-                    var y = row *tilesize;
-                    ctx.fillRect(x,y,tilesize,tilesize);
+                    ctx.drawImage(
+                        img,tilescrsize,0,tilescrsize,tilescrsize,x,y,tilesize,tilesize
+                        );
                 }
             }
         }
@@ -188,5 +197,4 @@
         render();
     };
 
-    loop();
 }());

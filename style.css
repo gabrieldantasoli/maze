@@ -1,3 +1,39 @@
-img{
-    width: 64px;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    background-color: rgb(56, 56, 56);
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 3rem;
+    background-color: black;
+}
+#canvas{
+    margin: 2rem 0;
+}
+#canvas canvas{
+    background-color: white;
+}
+footer{
+    position: fixed;
+    bottom: 0;left: 0;right: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    background-color: black;
+    font-style: italic;
+    padding: 1rem 0;
+}
+footer a:hover{
+    color: rgb(56, 56, 56);
 }

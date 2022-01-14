@@ -2,7 +2,21 @@
     var cnv = document.querySelector('canvas');
     var ctx = cnv.getContext('2d');
     
-    var tilesize = 64;
+    if (window.innerWidth > 650) {
+        var tilesize = 64;
+        var z = 3;
+    }else if (window.innerWidth < 650 && window.innerWidth > 400) {
+        var tilesize = 40;
+        cnv.width = 400;
+        cnv.height = 400;
+        var z = 2;
+    }else {
+        var tilesize = 28;
+        cnv.width = 280;
+        cnv.height = 280;
+        var z = 2;
+    }
+
     var tilescrsize = 96;
 
     var img = new Image();
@@ -14,11 +28,11 @@
     var walls = [];
 
     var player = {
-        x:tilesize + 2,
-        y:tilesize + 2,
-        width: 28,
-        height: 28,
-        speed: 2
+        x:tilesize + 5,
+        y:tilesize + 5,
+        width: tilesize - 10,
+        height: tilesize - 10,
+        speed: z
     }
 
     var maze = [
@@ -61,7 +75,6 @@
             }
         }
     }
-
     var cam = {
         x: 0,
         y: 0,
@@ -138,6 +151,22 @@
     });
     
     function update() {
+        cam.innerLeftBoundary = function() {
+            return cam.x + (cam.width*0.25);
+        },
+        cam.innerTopBoundary = function() {
+            return cam.y + (cam.height*0.25);
+        },
+        cam.innerRightBoundary = function() {
+            return cam.x + (cam.width*0.75);
+        },
+        cam.innerBottomBoundary = function() {
+            return cam.y + (cam.height*0.75);
+        }
+        walls.forEach(wall => {
+            wall.width = tilesize;
+            wall.height = tilesize;
+        })
         if (mvleft && !mvright) {
             player.x -= player.speed;
         }else if (!mvleft && mvright) {

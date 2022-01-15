@@ -149,6 +149,28 @@
                 break
         }
     });
+
+    document.getElementById('controls').addEventListener('touchstart',function(e) {
+        if (e.target.classList == 'fas fa-caret-up' || e.target.classList == 'up'){
+          mvup = true;
+        }
+        if (e.target.classList == 'fas fa-caret-left' || e.target.classList == 'left'){
+          mvleft = true;
+        }
+        if (e.target.classList == 'fas fa-caret-down' || e.target.classList == 'down'){
+          mvright = true;
+        }
+        if (e.target.classList == 'fas fa-caret-right' || e.target.classList == 'right'){
+          mvdown = true;
+        }
+      });
+      
+    document.getElementById('controls').addEventListener('touchend',function(e) {
+      mvleft = false;
+      mvright = false;
+      mvdown = false;
+      mvup = false;
+    });
     
     function update() {
         cam.innerLeftBoundary = function() {

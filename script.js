@@ -2,7 +2,7 @@
     var cnv = document.querySelector('canvas');
     var ctx = cnv.getContext('2d');
     
-    if (window.innerWidth > 650) {
+    if (window.innerWidth >= 650) {
         var tilesize = 64;
         var z = 3;
     }else if (window.innerWidth < 650 && window.innerWidth > 400) {
@@ -54,7 +54,7 @@
         [1,0,1,1,1,1,1,1,0,1,1,0,0,0,0,1,0,1,0,1],
         [1,0,1,0,0,0,0,1,0,0,1,1,1,1,0,0,0,0,0,1],
         [1,0,0,0,1,1,0,1,1,1,0,0,0,1,0,1,0,1,1,1],
-        [1,0,1,0,1,0,0,0,0,0,0,1,0,1,0,1,0,0,0,1],
+        [1,0,1,0,1,0,0,0,0,0,0,1,0,1,0,1,0,0,0,2],
         [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
     ];
 
@@ -212,6 +212,10 @@
                     ctx.drawImage(
                         img,tilescrsize,0,tilescrsize,tilescrsize,x,y,tilesize,tilesize
                         );
+                }
+                if (tile == 2) {
+                    ctx.fillStyle = '#daa520';
+                    ctx.fillRect(x,y,tilesize,tilesize)
                 }
             }
         }

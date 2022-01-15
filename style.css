@@ -22,12 +22,25 @@ header{
 #canvas{
     margin: 2rem 0;
 }
+#controls div{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 75px;
+  font-size: 80px;
+  text-shadow: 0 .5rem 1rem rgba(0,0,0,.8);
+}
+#controls div:hover{
+  background-color: #000;
+  color: white;
+}
 #canvas canvas{
     background-color: white;
+    margin-bottom: 1.5rem;
 }
 footer{
-    position: fixed;
-    bottom: 0;left: 0;right: 0;
     font-size: 2rem;
     font-weight: 600;
     background-color: black;
@@ -36,4 +49,54 @@ footer{
 }
 footer a:hover{
     color: rgb(56, 56, 56);
+}
+#controls{
+  display: flex;
+  flex-wrap: wrap;
+  width: 150px;
+  height: 150px;
+  background-color: #a1a1a1;
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.8);
+}
+#controls div:nth-child(1){
+  top: -10%;left: 25%;
+  transform: rotate(45deg);
+  border-radius: 100% 0 0 0;
+}
+#controls div:nth-child(1) i{
+  transform: rotate(-45deg);
+}
+#controls div:nth-child(2){
+  top: 25%;left: -59.7%;
+  transform: rotate(-45deg);
+  border-radius: 100% 0 0 0;
+}
+#controls div:nth-child(2) i{
+  transform: rotate(45deg);
+}
+#controls div:nth-child(3){
+  top: -25%;left: 60%;
+  transform: rotate(135deg);
+  border-radius: 100% 0 0 0;
+}
+#controls div:nth-child(3) i{
+  transform: rotate(135deg);
+}
+#controls div:nth-child(4){
+  top: 9.8%;left: -24%;
+  transform: rotate(225deg);
+  border-radius: 100% 0 0 0;
+}
+#controls div:nth-child(4) i{
+  transform: rotate(-135deg);
+}
+@media (min-width: 800px){
+  #controls{
+    display: none;
+  }
+  #canvas{
+    margin: .2rem 0;
+  }
 }

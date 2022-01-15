@@ -1,9 +1,11 @@
-Hello , good morning !
+Hello !
 
-this is a maze made with HTML , CSS and JAVASCRIPT (IN DEVELOPMENT)
+this is a maze made with HTML , CSS and JAVASCRIPT.
 
-for now , this only works whit keyboards events like UP , DOWN , LEFT and RIGHT and the player can only move through the maze, and may bump into walls.
+On desktop : it works with keybords events (navigation keys). Up navigation key moves square top , Down navigation key moves square down , Left navigation key moves square left and Right navigation key moves square right .
 
-soon I will make it responsive and create functions to work on mobile devices.
+On mobile : The game controls will appear below the maze.
 
-thanks to acess my code
+The player has to find the way out the maze . 
+
+thanks to acess my code.
